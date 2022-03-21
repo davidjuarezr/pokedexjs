@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Urbanist', sans-serif;
+    background-size: 100%;
+}
+
+.pokedex-container{
+    /* background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
+    background-color: orangered;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 900px;
+    color: #fff;
+    justify-content: center;
+    /* align-content: space-between; */
+    align-items: center;
+    /* display: grid; */
+    /* grid-template-rows:max-content 1fr;
+    grid-template-areas: 
+    "nav"
+    "content"; */
+    /* min-height: 100vh; */
+}
+
+.pokedex__header{
+    background: rgb(23, 32, 48);
+    min-height: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+   flex-direction: row;
+   padding: 10px;
+   justify-content: space-between;
+   align-content: space-evenly;
+	box-shadow: 0 3px 0 rgba(100, 100, 100, 0.8);
+}
+
+.pokedex__header-title{
+    color: rgb(127, 138, 163);
+    margin:0 25px 0 10px ;
+    text-align: left ;
+}
+
+.pokedex__header-search{
+    margin: auto;
+}
+
+.pokedex__header-search form{
+    border-color: blue;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pokedex__header-search input{
+    height: 30px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.pokedex__header-search form button{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* se foramto a la tarjeta donde se muetra el pokemon */
+.poke-card{
+    position: relative;
+    height: fit-content;
+    font-family: 'Roboto Mono', monospace;
+    padding: 40px;
+    margin: 10px auto;
+    border: 1px solid black;
+    list-style: none;
+    color: #222;
+    background-color: #eee;
+	border-radius: 20px;
+	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+	text-align: center;
+    width: 300px;
+    max-width: 300px;
+    justify-content: center;
+    /* align-content: space-between; */
+    align-items: center;
+}
+
+/* para crear animancion */
+.poke-card:hover{
+    animation: bounce 0.5s linear;
+}
+
+/* para ejecutar la animancion */
+@keyframes bounce {
+    20%{
+        transform: translateY(-6px);
+    }
+    40%{
+        transform: translateY(0px);
+    }
+    60%{
+        transform: translateY(-2px);
+    }
+   80%{
+        transform: translateY(-0px);
+    }
+}
+
+/* da formato a las estadisticas, texto a la izq, numeros der */
+.poke-stats div{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 5px;
+}
+
+/* agrega recuadro punteado */
+.poke-types div{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px dashed black;
+}
+
+/* se muestar la imagen de pokemon*/
+.poke-card .poke-img{
+    width: 180px;
+    border-radius: 50%;
+}
+
+/* la imagen se muestar en ovalo */
+.pokedex__header-title .poke-img{
+    width: 180px;
+}
+
+
+/* adaptar mi pagina a responsive a 500px */
+/* ctl + shift + m */
+@media screen and (max-width:500px){
+    /* se centran los objetos */
+    header{
+        background-position: center;
+    }
+
+    /* cambia el texto en columna */
+    .pokedex-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* se ajusta el texto de los parrafos de nuestros productos */
+    .pokedex__header{
+        width: 100%;
+    }
+
+    /* las tarjetas se muestran en columna */
+    .poke-card{
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .poke-card .poke-img{
+        width: 100px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 2px;
+        margin: 10px auto;
+   }
+
+    /* da formato a las estadisticas, texto a la izq, numeros der */
+    .poke-stats div{
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 2px;
+    }
+}
+
+/* adaptar mi pagina a responsive a 300px */
+/* ctl + shift + m */
+@media screen and (max-width:300px){
+    /* se centran los objetos */
+    header{
+        background-position: center;
+    }
+
+    /* cambia el texto en columna */
+    .pokedex-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* se ajusta el texto de los parrafos de nuestros productos */
+    .pokedex__header{
+        width: 100%;
+    }
+
+    /* las tarjetas se muestran en columna */
+    .poke-card{
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .poke-card .poke-img{
+        width: 80px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 2px;
+        margin: 10px auto;
+   }
+
+    /* da formato a las estadisticas, texto a la izq, numeros der */
+    .poke-stats div{
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 0;
+    }
+    
+}

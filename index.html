@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex - ThekuriDreams</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>Pokedex</title>
+    <link rel="shortcut icon" href="/assets/img/pokeball.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/assets/js/script.js" type="text/javascript" defer></script>    
 </head>
 <body>
-    <div class="pokedex-container">
+    <header class="pokedex-container">
         <div class="pokedex__header">
             <div class="pokedex__header-title">
-                <h1>POKEDEX</h1>
+                <img src="/assets/img/pokemonF.png" alt="" class="poke-img">
             </div>
             <div class="pokedex__header-search">
-                <form action="" id="searchPokemon">
-                    <input type="text" id="pokemon">
+                <form action="" id="searchPokemon" onsubmit="searchPokemon(event)">
+                    <input type="text" name="pokemon" autocomplete="off">
                     <button>
-                        <img src="/assets/img/pokeball.png" alt="pokeball">
+                        <img src="/assets/img/pokeball.png" width="40" alt="pokeball">
                     </button>
-
                 </form>
             </div>
+        </div>
             
-            <div class="pokedex__header-aline">
-                <div class="arrow-left" id="arrow-left"></div>
-                <div class="order" id="textGen">Gen 1</div>
-                <div class="arrow-right" id="arrow-right"></div>
+        <div data-poke-card class="poke-card">
+            <div data-poke-name>Pokedex</div>
+            <div data-poke-img-container class="img-container">
+                <img data-poke-img src="/assets/img/poke-shadow.png" alt="" class="poke-img">
             </div>
+            <div data-poke-id></div>
+            <div data-poke-types class="poke-types"></div>
+            <div data-poke-stats class="poke-stats"></div>
         </div>
+        <div style="height: 150px; overflow: hidden;" class="hero__waves" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C262.08,217.40 378.89,-120.09 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </header>
 
-        <div class="pokedex__pokemon-content" id="pokemonContent" onclick="exitModal()">
-        
-        </div>
-    </div>
-
- 
-    <script src="/assets/js/main.js"></script>
 </body>
 </html>
